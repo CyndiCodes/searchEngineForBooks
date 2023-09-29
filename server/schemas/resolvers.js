@@ -38,13 +38,13 @@ const resolvers = {
     },
 
     // Add a third argument to the resolver to access data in our `context`
-    saveBook: async (parent, { bookData }, context) => {
+    saveBook: async (parent, { BookData }, context) => {
       // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
       if (context.user) {
         return User.findByIdAndUpdate(
           { _id: context.user._id },
           {
-            $push: { savedBooks: bookData },
+            $push: { savedBooks: BookData },
           },
           {
             new: true,
