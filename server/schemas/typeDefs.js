@@ -3,8 +3,8 @@ const typeDefs = `
     _id: ID
     username: String!
     email: String!
-    savedBooks: [Book]
     bookCount: Int
+    savedBooks: [Book]
   }
 
   type Auth {
@@ -16,9 +16,9 @@ const typeDefs = `
     bookId: ID!
     authors: [String]
     description: String
+    title: String!
     image: String
     link: String
-    title: String!
   }
 
   input BookInput{
