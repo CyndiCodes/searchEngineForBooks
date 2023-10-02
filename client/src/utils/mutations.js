@@ -22,14 +22,14 @@ mutation AddUser($username: String!, $email: String!, $password: String!) {
 `
 
 export const SAVE_BOOK = gql`
-mutation Mutation($bookData: BookInput) {
+mutation SaveBook($bookData: BookInput) {
   saveBook(bookData: $bookData) {
     _id
   }
 }
 `
 export const REMOVE_BOOK = gql`
-mutation Mutation($bookId: ID!) {
+mutation RemoveBook($bookId: ID!) {
   removeBook(bookId: $bookId) {
     _id
   }
