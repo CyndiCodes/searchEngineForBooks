@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import {
   Container,
   Card,
@@ -16,7 +16,6 @@ import { GET_ME } from '../utils/queries';
 const SavedBooks = () => {
   // const [userData, setUserData] = useState({});
 
-  
   const [removeBook, {error}] = useMutation(REMOVE_BOOK)
   const {loading, data} = useQuery(GET_ME)
   const userData = data?.me || {}
@@ -40,6 +39,7 @@ const SavedBooks = () => {
 
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
+      window.location.reload(false)
     } catch (err) {
       console.error(err);
     }
